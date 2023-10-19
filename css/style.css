@@ -1,0 +1,212 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001F3F;
+}
+/*Estilos Login*/
+.login{
+    display: flex;
+    background-color: #EDEDED;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 200px;
+    margin-top: 2%;
+    padding: 50px;
+}
+.btn {
+    border: none; 
+    color: white; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    margin: 5px;
+  }
+
+.primary {background-color: #001F3F;} 
+.primary:hover {background: #0b7dda;}
+
+.danger {background-color: #f44336;} 
+.danger:hover {background: #da190b;}
+
+.success {background-color: #04AA6D;} 
+.success:hover {background-color: #46a049;}
+
+
+.tituloLogin{
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 8px 4px #d3d3d3d1;
+}
+.loginForm{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-input{
+    
+    padding: 10px;
+}
+input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+.button{
+    background-color: #001F3F;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 6px 1px 1px #bebebe;
+}
+
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #EDEDED;
+    /* Puedes cambiar el color de fondo según tu paleta de colores */
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav img {
+    margin-top: 0;
+    margin-left: 0;
+    height: 80px;
+    /* Ajusta el tamaño del logo según sea necesario */
+}
+
+nav ul {
+    float: right;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+    /* Elimina el margen derecho del último elemento */
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 1px 1px #bebebe;
+
+}
+
+ul li a:hover {
+    background-color: #ddeefe;
+    /* Cambia el estilo del texto al pasar el cursor sobre los botones */
+}
+
+/*Estilos de los paneles*/
+.PanelPrincipal {
+    background-color: #EDEDED;
+    margin: 0px 50px;
+    margin-top: 10px;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.titulo h3 {
+    text-align: center;
+    padding: 5px;
+    box-shadow: 2px 8px 4px #d3d3d3d1;
+}
+
+.ListaDeUsuarios {
+    margin: 0px 5px 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Tarjetas que contendrán la información*/
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 22%;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d1;
+    border-radius: 15px;
+    font-family: sans-serif;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-size: 24px;
+    padding: 10px 10px 0 10px;
+}
+
+.cuerpo {
+    padding: 10px;
+}
+.cuerpo img{
+    width: 100px;
+    height: 100px;
+}
+
+.pie {
+    position: relative;
+    background-color: #001F3F;
+    border-radius: 0 0 15px 15px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.pie a {
+    text-decoration: none;
+    color: white;
+    
+}
+.formEdit{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+
+.formbuttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.containTableForm{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.containTableForm table{
+    width: 500px;
+}
+.containTableForm table input{
+    width: 200px;
+}
+.containTableForm table td label{
+    margin-left: 90px;
+    width: 200px;
+}

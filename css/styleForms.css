@@ -1,0 +1,59 @@
+.containTableForm {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.containTableForm table {
+    width: 100px;
+}
+
+.containTableForm table input {
+    width: 200px;
+}
+
+.containTableForm table td label {
+
+    width: 200px;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.primary {
+    background-color: #001F3F;
+}
+
+.primary:hover {
+    background: #0b7dda;
+}
+
+.danger {
+    background-color: #f44336;
+}
+
+.danger:hover {
+    background: #da190b;
+}
+
+.success {
+    background-color: #04AA6D;
+}
+
+.success:hover {
+    background-color: #46a049;
+}
+
+.formbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
