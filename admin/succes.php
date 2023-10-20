@@ -7,7 +7,7 @@
     <title>Sucess</title>
 
     <link rel="shortcut icon" href="img/LogoBahiaSerenaIcon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="..s/css/style.css">
 
 </head>
 

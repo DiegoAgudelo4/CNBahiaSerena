@@ -6,35 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="img/LogoBahiaSerenaIcon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/LogoBahiaSerenaIcon.png" type="image/x-icon">
 </head>
+
 <body>
     <div class="login">
         <h1 class="tituloLogin">Iniciar Sesión</h1>
         <div class="logo">
-            <img src="img/LogoBahiaSerenaFull.png" alt="">
+            <img src="../img/LogoBahiaSerenaFull.png" alt="">
         </div>
-        <form action="Usuarios" class="loginForm">
+        <form action="controllerLogin.php" class="loginForm" method="post">
             <table>
                 <tr class="contenedor-input">
                     <td>
-                        <label>
-                            Usuario
-                        </label>
+                        <label for="usuario">Usuario</label>
                     </td>
                     <td>
-                        <input type="text" required>
+                        <input type="text" name="usuario" id="usuario" required>
                     </td>
                 </tr>
                 <tr class="contenedor-input">
                     <td>
-                        <label>
-                            Contraseña
-                        </label>
+                        <label for="contrasena">Contraseña</label>
                     </td>
                     <td>
-                        <input type="password" required>
+                        <input type="password" name="contrasena" id="contrasena" required>
                     </td>
                 </tr>
             </table>
@@ -42,4 +39,5 @@
         </form>
     </div>
 </body>
+
 </html>
