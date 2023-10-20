@@ -1,13 +1,8 @@
 <link rel="stylesheet" type="text/css" href="../css/styleForms.css">
+<?php require_once '../config.php'; ?>
 <?php
-$tipo = $_GET["tipo"];
-$id = $_GET["id"];
-$nombre_servidor = "localhost";
-$nombre_BD = "clubbahiaserena";
-$nombre_usuario = "root";
-$contrasena = "1234";
-$conexion = mysqli_connect($nombre_servidor, $nombre_usuario, $contrasena, $nombre_BD);
-$queryUsuarios = 'SELECT * FROM `usuario` WHERE Cedula=' . $id . '';
+$conexion = conectarBD();
+$queryUsuarios = 'SELECT * FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE Cedula=' . $id . '';
 $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
 ?>
 
@@ -46,11 +41,11 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
         <tr class="contenedor-input">
             <td>
                 <label>
-                    NombreTipo
+                    Tipo de usuario
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['TipoUsuario']; ?>>
+                <input type="text" name="" id="codigo" value=<?php echo $resultado['NombreTipo']; ?> disabled>
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -93,10 +88,10 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 <input type="text" name="" id="codigo" value=<?php echo $id; ?>>
             </td>
         </tr>
-    </table>
 
-</div>
-<div class="formbuttons">
-    <button class="btn danger">Eliminar</button>
-    <button class="btn success">Actualizar</button>
+    </table>
+    <div class="formbuttons">
+        <a href="eliminar.php?tipo=Usuario&id=<?php echo $id; ?>" class="btn danger">Eliminar</a>
+        <a class="btn success">Actualizar</a>
+    </div>
 </div>

@@ -10,9 +10,10 @@
 </head>
 
 <body>
-   <?php 
-    include 'header.php';
-   ?>
+    <?php
+    include '../config.php'; 
+    include $header;    
+    ?>
     <div class="PanelPrincipal">
         <div class="titulo">
             <h3>Barcos de Bahía serena</h3>
@@ -20,7 +21,6 @@
         <div class="ListaDeUsuarios">
             <!-- Tarjetas que contienen cada usuario -->
             <?php
-            include 'config.php';
             $conexion = conectarBD();
             $queryUsuarios = "SELECT NumMatricula, NombreBarco,NumeroAmarre, Cuota, U.Nombre,u.Apellidos FROM `barco` AS B INNER JOIN `Usuario` AS U ON B.Usuario=U.Cedula WHERE 1;";
             $resultado = mysqli_query($conexion, $queryUsuarios);
@@ -30,14 +30,14 @@
                     echo '<div class="cuerpo">';
                     echo '<img src="../img/yatch.png">';
                     echo '</div>';
-                    echo '<div class="titulo">Matricula: ' . $row['NumMatricula'] . '</div>';
-                    echo '<div class="titulo">Amarre: ' . $row['NumeroAmarre'] . '</div>';
-                    echo '<div class="cuerpo">Cuota: $' . $row['Cuota'] . '</div>';
+                    echo '<div class="titulo">Matricula: '          . $row['NumMatricula']  . '</div>';
+                    echo '<div class="titulo">Amarre: '             . $row['NumeroAmarre']  . '</div>';
+                    echo '<div class="cuerpo">Cuota: $'             . $row['Cuota']         . '</div>';
                     echo '<div class="titulo">Dueño</div>';
-                    echo '<div class="cuerpo">' . $row['Nombre'] . '</div>';
-                    echo '<div class="cuerpo">' . $row['Apellidos'] . '</div>';
+                    echo '<div class="cuerpo">'                     . $row['Nombre']        . '</div>';
+                    echo '<div class="cuerpo">'                     . $row['Apellidos']     . '</div>';
                     echo '<div class="pie">';
-                    echo '<a href="form.php?tipo=Barco&id=' . $row['NumMatricula'] . '">ver</a>';
+                    echo '<a href="form.php?tipo=Barco&id=' . $row['NumMatricula']          . '">ver</a>';
                     echo '</div>';
                     echo '</div>';
                 }

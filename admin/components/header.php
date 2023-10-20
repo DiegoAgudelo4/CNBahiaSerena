@@ -1,3 +1,7 @@
+<?php require_once '../config.php'; ?>
+<head>
+    <link rel="stylesheet" type="text/css" href=<?php echo $hojaEstilosUs; ?>>
+</head>
 <nav class="navbar">
     <img src="../img/LogoBahiaSerenaFullIcon.png" alt="Logo Bahia Serena">
     <ul>

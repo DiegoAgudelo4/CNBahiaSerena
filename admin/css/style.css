@@ -195,18 +195,3 @@ ul li a:hover {
     align-items: center;
     width: 100%;
 }
-.containTableForm{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-}
-.containTableForm table{
-    width: 500px;
-}
-.containTableForm table input{
-    width: 200px;
-}
-.containTableForm table td label{
-    margin-left: 90px;
-    width: 200px;
-}

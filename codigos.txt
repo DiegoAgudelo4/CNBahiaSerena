@@ -1,0 +1,6 @@
+codigo: 0 -> 'Usuario y/o contraseña incorrectos'
+codigo: 1 ->  'El usuario no se puede eliminar por clave foranea'
+codigo: 10 ->'Borrado correctamente'
+codigo: 20 -> 'llama a formulario de usuarios'
+codigo: 21 -> 'llama a formulario de barcos'
+codigo: 22 -> 'llama a formulario de salidas'
