@@ -195,3 +195,17 @@ ul li a:hover {
     align-items: center;
     width: 100%;
 }
+.agregar{
+    width: 30px;
+}
+.panelagregar{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-right: 30px;
+}
+.panelagregar a img{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}

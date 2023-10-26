@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salidas</title>
-    <link rel="shortcut icon" href="img/LogoBahiaSerenaIcon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/LogoBahiaSerenaIcon.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 
 <body>
     <?php
     include '../components/header.php';
+    require_once '../config.php';
     ?>
     </nav>
     <div class="PanelPrincipal">
         <div class="titulo">
             <h3>Salidas de Bahía serena</h3>
         </div>
+        <div class="panelagregar">
+            <a href="#"><img src="../img/LogoBahiaSerenaIcon.png" alt=""  class="agregar"></a>
+        </div>
         <div class="ListaDeUsuarios">
             <!-- Tarjetas que contienen cada usuario -->
             <?php
-            $nombre_servidor = "localhost";
-            $nombre_BD = "clubbahiaserena";
-            $nombre_usuario = "root";
-            $contrasena = "1234";
-            $conexion = mysqli_connect($nombre_servidor, $nombre_usuario, $contrasena, $nombre_BD);
+            $conexion=conectarBD();
             $queryUsuarios = "SELECT * FROM `salida` WHERE 1;";
             $resultado = mysqli_query($conexion, $queryUsuarios);
             if (mysqli_num_rows($resultado) > 0) {
@@ -38,7 +38,7 @@
                     echo '<div class="titulo">Destino: ' . $row['Destino'] . '</div>';
                     echo '<div class="cuerpo">Fecha: ' . $row['FechayHora'] . '</div>';
                     echo '<div class="pie">';
-                    echo '<a href="#">ver</a>';
+                    echo '<a href="../components/form.php?tipo=Salida&id=' . $row['idSalida'] . '">ver</a>';
                     echo '</div>';
                     echo '</div>';
                 }

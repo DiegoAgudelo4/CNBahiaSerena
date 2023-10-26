@@ -1,0 +1,51 @@
+/*Modal*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    z-index: 1; /* Coloca el modal por encima de otros elementos */
+    overflow: auto; /* Habilita desplazamiento si el contenido es largo */
+}
+
+/* Estilos para el contenedor del mensaje en el modal */
+.containerMessage {
+    background: #fff;
+    width: 80%; /* Ancho del contenedor del mensaje */
+    max-width: 400px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Centrar en la pantalla vertical y horizontalmente */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título del mensaje */
+.messageTitulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el mensaje en el modal */
+.messageMessage {
+    font-size: 16px;
+}
+
+.btn {
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.primary {
+    background-color: #001F3F;
+}
+.containerBtn{
+    display: flex;
+    justify-content: center;
+}

@@ -25,25 +25,49 @@
         <div class="containTableForm">
             <?php
             if (isset($_GET['Codigo'])) {
-                if($_GET['Codigo']==10){
-                    echo 'Eliminado correctamente';
-                }else if($_GET['Codigo']==1){
-                    echo 'El usuario no se puede eliminar';
-                }else{
-                    echo 'Error desconocido';
-                }
+                include 'mensaje.php';
             } else {
                 $tipo = $_GET["tipo"];
                 $id = $_GET["id"];
-                if ($tipo == 'Usuario') {
-                    include 'formUsuario.php';
+                switch ($tipo) {
+                    case "Usuario":
+                        include 'formUsuario.php';
+                        break;
+                    case 'Salida':
+                        include 'formSalida.php';
+                        break;
+                    case 'Barco':
+                        include 'formBarco.php';
+                        break;
+                    default:
+                        echo 'Error desconocido';
+                        break;
                 }
             }
             ?>
         </div>
-        <div class="containTableForm">
-            <a href="../usuarios"><button class="btn primary">Volver</button></a>
-        </div>
+        <?php
+        if (!isset($_GET['Codigo'])) {
+            echo '  <div class="containTableForm">';
+            switch ($tipo) {
+                case 'Usuario':
+                    echo '<a href="../usuarios"><button class="btn primary">Volver</button></a>';
+                    break;
+                case 'Salida':
+                    echo '<a href="../salidas"><button class="btn primary">Volver</button></a>';
+                    break;
+                case 'Barco':
+                    echo '<a href="../Barco"><button class="btn primary">Volver</button></a>';
+                    break;
+                default:
+                    echo '';
+                    break;
+            }
+
+            echo '</div>';
+        }
+        ;
+        ?>
     </div>
 
 </body>

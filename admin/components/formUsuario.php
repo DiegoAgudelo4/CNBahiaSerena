@@ -1,12 +1,32 @@
 <link rel="stylesheet" type="text/css" href="../css/styleForms.css">
 <?php require_once '../config.php'; ?>
 <?php
-$conexion = conectarBD();
-$queryUsuarios = 'SELECT * FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE Cedula=' . $id . '';
-$resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
+$set = isset($_GET["id"]);
+if ($set) {
+    $conexion = conectarBD();
+    $queryUsuarios = 'SELECT * FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE Cedula=' . $id . '';
+    $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
+}
+
+
 ?>
 
 <div class="containTableForm">
+    <?php
+    if ($set) {
+        echo ' <form action="actualizar.php" method="post">';
+    } else {
+        echo ' <form action="../components/insertar.php" method="post">';
+    }
+    ?>
+    <?php
+    if ($set) {
+        echo '';
+    } else {
+        echo '';
+    }
+    ?>
+
     <table>
         <tr class="contenedor-input">
             <td>
@@ -15,7 +35,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $id; ?> disabled>
+                <?php
+                if ($set) {
+                    echo ' <input type="text" name="cedula" id="codigo" value=' . $id . ' readonly>';
+                } else {
+                    echo ' <input type="text" name="cedula" id="codigo" placeholder="0123456789" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -25,7 +52,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="Nombre" value=<?php echo $resultado['Nombre']; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="nombre" id="Nombre" value=' . $resultado['Nombre'] . '>';
+                } else {
+                    echo '<input type="text" name="nombre" id="Nombre" placeholder="Pepito" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -35,7 +69,13 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['Apellidos']; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="apellidos" id="codigo" value=' . $resultado['Apellidos'] . '>';
+                } else {
+                    echo '<input type="text" name="apellidos" id="codigo" placeholder="Perez" required>';
+                }
+                ?>
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -45,7 +85,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['NombreTipo']; ?> disabled>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="nombretipo" id="codigo" value=' . $resultado['NombreTipo'] . ' readonly>';
+                } else {
+                    echo '<input type="text" name="nombretipo" id="codigo" placeholder="TPU-1" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -55,7 +102,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['Telefono']; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="telefono" id="codigo" value=' . $resultado['Telefono'] . '>';
+                } else {
+                    echo '<input type="text" name="telefono" id="codigo" placeholder="0123456789" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -65,7 +119,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['FechaNacimiento']; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="fechanacimiento" id="codigo" value=' . $resultado['FechaNacimiento'] . ' readonly>';
+                } else {
+                    echo '<input type="date" name="fechanacimiento" id="codigo" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -75,7 +136,14 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $resultado['Direccion']; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="direccion" id="codigo" value=' . $resultado['Direccion'] . '>';
+                } else {
+                    echo '<input type="text" name="direccion" id="codigo" placeholder="calle 123 #45-67" required>';
+                }
+                ?>
+
             </td>
         </tr>
         <tr class="contenedor-input">
@@ -85,13 +153,30 @@ $resultado = mysqli_fetch_array(mysqli_query($conexion, $queryUsuarios));
                 </label>
             </td>
             <td>
-                <input type="text" name="" id="codigo" value=<?php echo $id; ?>>
+                <?php
+                if ($set) {
+                    echo '<input type="text" name="email" id="codigo" value=' . $resultado['Email'] . '>';
+                } else {
+                    echo '<input type="text" name="email" id="codigo" placeholder="email@ejemplo.com" required> ';
+                }
+                ?>
+
             </td>
         </tr>
-
     </table>
     <div class="formbuttons">
-        <a href="eliminar.php?tipo=Usuario&id=<?php echo $id; ?>" class="btn danger">Eliminar</a>
-        <a class="btn success">Actualizar</a>
+        <?php
+        if ($set) {
+            echo '
+                <a href="eliminar.php?tipo=Usuario&id='.$id.'" class="btn danger">Eliminar</a>
+                <button class="btn success" type="submit">Actualizar</button>
+              ';
+        } else {
+            echo '<button class="btn success" type="submit">Insertar</button>';
+        }
+        ?>
     </div>
+
+    </form>
+
 </div>
