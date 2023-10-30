@@ -13,7 +13,7 @@ $codigo = $_GET['Codigo'];
             <?php
             switch ($codigo) {
                 case 1:
-                    echo 'No se pudo eliminar';
+                    echo 'No se pudo eliminar, *existe una relacion con algun objeto*';
                     break;
                 case 10:
                     echo 'Eliminado Correctamente';

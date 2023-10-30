@@ -16,7 +16,7 @@ if ($set) {
     $set ?
         print ' <form action="actualizar.php" method="post">'
         :
-        print ' <form action="../components/insertar.php" method="post">';
+        print ' <form action="../components/insertar.php" method="post" >';
     ?>
     <table>
         <tr class="contenedor-input">

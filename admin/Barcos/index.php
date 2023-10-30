@@ -26,16 +26,23 @@
             <!-- Tarjetas que contienen cada usuario -->
             <?php
             $conexion = conectarBD();
-            $queryUsuarios = "SELECT NumMatricula, NombreBarco,NumeroAmarre, Cuota, U.Nombre,u.Apellidos FROM `barco` AS B INNER JOIN `Usuario` AS U ON B.Usuario=U.Cedula WHERE 1;";
+            $queryUsuarios = "SELECT NumMatricula, NombreBarco,NumeroAmarre, Cuota,Foto, U.Nombre,u.Apellidos FROM `barco` AS B INNER JOIN `Usuario` AS U ON B.Usuario=U.Cedula WHERE 1;";
             $resultado = mysqli_query($conexion, $queryUsuarios);
             if (mysqli_num_rows($resultado) > 0) {
                 while ($row = mysqli_fetch_array($resultado)) {
                     echo '<div class="tarjeta">';
                     echo '<div class="cuerpo">';
-                    echo '<img src="../img/yatch.png">';
+                    echo '<img src="';
+                    if ($row['Foto'] == 'NULL') {
+                        echo '../img/yatch.png';
+                    }else{
+                        echo $row['Foto'];
+                    }
+                    echo '">';
                     echo '</div>';
                     echo '<div class="titulo">Matricula: '                  . $row['NumMatricula']  . '</div>';
                     echo '<div class="titulo">Amarre: '                     . $row['NumeroAmarre']  . '</div>';
+                    echo '<div class="cuerpo">Nombre del barco:'            . $row['NombreBarco']   . '</div>';
                     echo '<div class="cuerpo">Cuota: $'                     . $row['Cuota']         . '</div>';
                     echo '<div class="titulo">Dueño</div>';     
                     echo '<div class="cuerpo">'                             . $row['Nombre']        . '</div>';

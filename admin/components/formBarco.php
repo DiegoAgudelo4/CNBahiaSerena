@@ -42,7 +42,7 @@ if ($set) {
     $set ?
         print ' <form action="actualizar.php" method="post">'
         :
-        print ' <form action="../components/insertar.php" method="post">';
+        print ' <form action="../components/insertar.php" method="post" enctype="multipart/form-data">';
     ?>
 
     <table>
@@ -57,7 +57,7 @@ if ($set) {
                 $set ?
                     print '<input type="text" name="Matricula" id="codigo" value="' . $id . '" readonly> '
                     :
-                    print '<input type="text" name="Matricula" id="codigo" placeholder="AB1234" >  ';
+                    print '<input type="text" name="Matricula" id="codigo" placeholder="AB1234" required>  ';
                 ?>
 
             </td>
@@ -73,7 +73,7 @@ if ($set) {
                 $set ?
                     print '<input type="text" name="nombre" id="Nombre" value="' . $row['NombreBarco'] . '">'
                     :
-                    print '<input type="text" name="nombre" id="Nombre" placeholder="Nombre" >';
+                    print '<input type="text" name="nombre" id="Nombre" placeholder="Nombre" required>';
                 ?>
 
             </td>
@@ -87,9 +87,9 @@ if ($set) {
             <td>
                 <?php
                 $set ?
-                    print '<input type="text" name="amarre" id="codigo" value="' . $row['NumeroAmarre'] . '">'
+                    print '<input type="text" name="amarre" id="codigo" value="' . $row['NumeroAmarre'] . '" >'
                     :
-                    print '<input type="text" name="amarre" id="codigo" placeholder="Xxx" ';
+                    print '<input type="text" name="amarre" id="codigo" placeholder="Xxx" required>';
                 ?>
 
             </td>
@@ -105,7 +105,7 @@ if ($set) {
                 $set ?
                     print '<input type="number" name="Cuota" id="codigo" value="' . $row['Cuota'] . '">'
                     :
-                    print '<input type="number" name="Cuota" id="codigo" placeholder="0.00" >';
+                    print '<input type="number" name="Cuota" id="codigo" placeholder="0.00" required>';
                 ?>
 
             </td>
@@ -121,7 +121,8 @@ if ($set) {
                 if ($set) {
                     print '<input type="number" name="dueño" id="codigo" value="' . $row['Usuario'] . '" readonly>';
                 } else {
-                    echo '<select name="nombretipo">';
+                    echo '<select name="usuario" required>';
+                    echo '<option value="">  </option>';
                     $sql = "SELECT * FROM `usuario`";
                     $conexion = conectarBD();
                     $resultado = (mysqli_query($conexion, $sql));
@@ -131,24 +132,27 @@ if ($set) {
                     echo '</select>';
                 }
                 ?>
-
             </td>
         </tr>
         <tr class="contenedor-input">
             <td>
-                <label >
-                    Foto
+                <label>
+                    <?php
+                    !$set ? print 'Foto del barco' : '';
+                    ?>
                 </label>
             </td>
             <td>
-                <input type="file" name="imagen" id="imagen">
+                <?php
+                !$set ? print ' <input type="file" name="imagen" id="imagen">' : '';
+                ?>
             </td>
         </tr>
     </table>
     <div class="formbuttons">
         <?php
         if ($set) {
-            echo ' <a href="eliminar.php?tipo=Usuario&id=<?php echo $id; ?>" class="btn danger">Eliminar</a>
+            echo ' <a href="eliminar.php?tipo=Barco&id=' . $id . '" class="btn danger">Eliminar</a>
                     <button class="btn success" type="submit">Actualizar</button>';
         } else {
             echo '<button class="btn success" type="submit">Insertar</button>';
@@ -156,5 +160,4 @@ if ($set) {
         ?>
     </div>
     </form>
-
 </div>

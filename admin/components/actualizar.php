@@ -17,18 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt = $conexion->prepare($sql)) {
             $stmt->bind_param("ssssssi", $nombre, $apellidos, $telefono, $fechanacimiento, $direccion, $email, $id);
             if ($stmt->execute()) {
-                $datos_post=array(
-                    'tipo' =>'Usuario',
-                    'Codigo'=> '11',
+                $datos_post = array(
+                    'tipo' => 'Usuario',
+                    'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             } else {
-                $datos_post=array(
-                    'tipo' =>'Usuario',
-                    'Codigo'=> '12',
+                $datos_post = array(
+                    'tipo' => 'Usuario',
+                    'Codigo' => '12',
                 );
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ;
     }
     ;
-    if(isset($_POST['idSalida'])){
+    if (isset($_POST['idSalida'])) {
         $id = $_POST['idSalida'];
         $Destino = $_POST['Destino'];
         $fechayhora = $_POST['fechayhora'];
@@ -44,27 +44,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conexion = conectarBD();
         $sql = "UPDATE salida SET Destino=?, FechaYHora=? WHERE idSalida=?";
         if ($stmt = $conexion->prepare($sql)) {
-            $stmt->bind_param("ssi",$Destino, $fechayhora, $id);
+            $stmt->bind_param("ssi", $Destino, $fechayhora, $id);
             if ($stmt->execute()) {
-                $datos_post=array(
-                    'tipo' =>'Salida',
-                    'Codigo'=> '11',
+                $datos_post = array(
+                    'tipo' => 'Salida',
+                    'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             } else {
-                $datos_post=array(
-                    'tipo' =>'Salida',
-                    'Codigo'=> '12',
+                $datos_post = array(
+                    'tipo' => 'Salida',
+                    'Codigo' => '12',
                 );
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
         }
         ;
-    };
-    if(isset($_POST['NumMatricula'])){
+    }
+    ;
+    if (isset($_POST['NumMatricula'])) {
         $id = $_POST['NumMatricula'];
         $Destino = $_POST['Destino'];
         $fechayhora = $_POST['fechayhora'];
@@ -72,28 +73,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conexion = conectarBD();
         $sql = "UPDATE salida SET Destino=?, FechaYHora=? WHERE idSalida=?";
         if ($stmt = $conexion->prepare($sql)) {
-            $stmt->bind_param("ssi",$Destino, $fechayhora, $id);
+            $stmt->bind_param("ssi", $Destino, $fechayhora, $id);
             if ($stmt->execute()) {
-                $datos_post=array(
-                    'tipo' =>'Salida',
-                    'Codigo'=> '11',
+                $datos_post = array(
+                    'tipo' => 'Salida',
+                    'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             } else {
-                $datos_post=array(
-                    'tipo' =>'Salida',
-                    'Codigo'=> '12',
+                $datos_post = array(
+                    'tipo' => 'Salida',
+                    'Codigo' => '12',
                 );
-                header('location: form.php?'.$datos_codificados);
+                header('location: form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
         }
         ;
-
-    };
-
-    // Realiza acciones con los datos, como almacenarlos en una base de datos o procesarlos de alguna otra manera.
-};
+    }
+    ;
+    if (isset($_POST['Matricula'])) {
+        $id = $_POST['Matricula'];
+        $nombre = $_POST['nombre'];
+        $amarre = $_POST['amarre'];
+        $Cuota= $_POST['Cuota'];
+        $conexion = conectarBD();
+        $sql = "UPDATE barco SET NombreBarco=?,NumeroAmarre=?, Cuota=? WHERE NumMatricula=?";
+        if ($stmt = $conexion->prepare($sql)) {
+            $stmt->bind_param("ssis",$nombre, $amarre, $Cuota, $id);
+            if ($stmt->execute()) {
+                $datos_post = array(
+                    'tipo' => 'Barco',
+                    'Codigo' => '11',
+                );
+                $datos_codificados = http_build_query($datos_post);
+                header('location: form.php?' . $datos_codificados);
+            } else {
+                $datos_post = array(
+                    'tipo' => 'Barco',
+                    'Codigo' => '12',
+                );
+                header('location: form.php?' . $datos_codificados);
+            }
+            ;
+            $stmt->close();
+        }
+        ;
+    }
+    ;
+}
+;
 
