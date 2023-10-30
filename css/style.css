@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.sede{
+    margin: 0px 30px;
+}
+
+.slider {
+    width: 100%;
+    height: 400px;
+
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide img{
+    width: 600px;
+    height: 400px;
+}
+
+.slide.visible {
+    display: block; /* Mostrar solo la diapositiva actual */
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+.sede{
+    background-color: aqua;
+}
+
+.navbar {
+    background-color: #EDEDED;
+    /* Puedes cambiar el color de fondo según tu paleta de colores */
+    overflow: hidden;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav img {
+    margin-top: 0;
+    margin-left: 0;
+    height: 80px;
+    /* Ajusta el tamaño del logo según sea necesario */
+}
+
+nav ul {
+    float: right;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+    /* Elimina el margen derecho del último elemento */
+}
+
+nav ul li {
+    margin-right: 10px;
+}
+
+nav ul li a {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 1px 1px #bebebe;
+
+}
+
+ul li a:hover {
+    background-color: #ddeefe;
+    /* Cambia el estilo del texto al pasar el cursor sobre los botones */
+}

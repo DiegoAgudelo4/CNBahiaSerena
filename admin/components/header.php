@@ -8,6 +8,7 @@
         <li><a href="../Usuarios">Usuarios</a></li>
         <li><a href="../Salidas">Salidas</a></li>
         <li><a href="../Barcos">Barcos</a></li>
-        <li><a href="../index.php">Salir</a></li>
+        <li><a href="../index.php">Cerrar Sesion</a></li>
+        <li><a href="../../">Salir</a></li>
     </ul>
 </nav>

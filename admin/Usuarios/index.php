@@ -14,31 +14,25 @@
 <body>
     <?php
     include '../components/header.php';
-    if (isset($_POST['buscar'])) {
-        $buscar = $_POST['buscar'];
-    } else {
-        $buscar = '';
-    }
+    /*if(!isset($_GET['Usuario'])) {
+        header('location: ../');
+    }else{
+        echo $_GET['Usuario'];
+    }*/
     ?>
     <div class="PanelPrincipal">
         <div class="titulo">
             <h3>Usuarios de Bahía serena</h3>
         </div>
         <div class="panelagregar">
-            <div>
-                <form action="index.php" method="post">
-                    <Input type="text" name="buscar" placeholder="pepito" value="<?php echo $buscar ?>"></Input>
-                    <button class="btn success" type="submit">Buscar</button>
-                </form>
-
-            </div>
+            <?php include '../components/buscar.php';?>
             <a href="index.php?tipo=Usuario&Insertar=true"><img src="../img/add.png" alt="" class="agregar"></a>
         </div>
         <div class="ListaDeUsuarios">
             <!-- Tarjetas que contienen cada usuario -->
             <?php
             $conexion = conectarBD();
-            $queryUsuarios = "SELECT U.Cedula,u.Nombre,U.Apellidos, TU.NombreTipo FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE u.Nombre like '%$buscar%' or U.Cedula like '%$buscar%' or U.Apellidos like '%$buscar%';";
+            $queryUsuarios = "SELECT U.Cedula,u.Nombre,U.Apellidos, TU.NombreTipo FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE u.Nombre like '%$buscar%' or U.Cedula like '%$buscar%' or U.Apellidos like '%$buscar%' ORDER BY U.NOMBRE ASC, U.APELLIDOS ASC;";
             $resultado = mysqli_query($conexion, $queryUsuarios);
             if (mysqli_num_rows($resultado) > 0) {
                 while ($row = mysqli_fetch_array($resultado)) {

@@ -9,8 +9,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $queryUsuarios = "SELECT * FROM `Admin` WHERE Usuario='$usuario' AND contrasena='$contrasena';";
     $resultado = mysqli_query($conexion, $queryUsuarios);
     if (mysqli_num_rows($resultado) > 0) {
-        echo 'usuario correcto';
-        header('location: '.$adminUsuarios);
+        $datos_post=array(
+            'Usuario'=> $usuario,
+        );
+        $datos_codificados = http_build_query($datos_post);
+        header('location: Usuarios?'.$datos_codificados);
     }else{
         //echo "<script>alert('Este es un mensaje de alerta desde PHP.');</script>";
         $datos_post=array(

@@ -12,10 +12,13 @@
             <?php
             switch ($_GET['tipo']) {
                 case 'Usuario':
-                   include ('formUsuario.php');
+                    include('formUsuario.php');
                     break;
                 case 'Salida':
-                    
+                    include('formSalida.php');
+                    break;
+                case 'Barco':
+                    include('formBarco.php');
                     break;
                 default:
                     echo '';
@@ -26,18 +29,23 @@
         </div>
         <?php
         echo '<div class="containTableForm">';
+        echo '<a href="';
         switch ($_GET['tipo']) {
             case 'Usuario':
-                echo '<a href="../usuarios"><button class="btn primary">Volver</button></a>';
+                echo '../usuarios';
                 break;
             case 'Salida':
-                echo '<a href="../salidas"><button class="btn primary">Volver</button></a>';
+                echo '../salidas';
+                break;
+            case 'Barco':
+                echo '../Barcos';
                 break;
             default:
                 echo '';
                 break;
         }
         ;
+        echo '"><button class="btn primary">Volver</button></a>';
         echo '</div>';
         ?>
     </div>

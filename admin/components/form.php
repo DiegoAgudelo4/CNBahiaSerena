@@ -49,21 +49,22 @@
         <?php
         if (!isset($_GET['Codigo'])) {
             echo '  <div class="containTableForm">';
+            echo '<a href="';
             switch ($tipo) {
                 case 'Usuario':
-                    echo '<a href="../usuarios"><button class="btn primary">Volver</button></a>';
+                    echo '../usuarios';
                     break;
                 case 'Salida':
-                    echo '<a href="../salidas"><button class="btn primary">Volver</button></a>';
+                    echo '../salidas';
                     break;
                 case 'Barco':
-                    echo '<a href="../Barco"><button class="btn primary">Volver</button></a>';
+                    echo '../Barcos';
                     break;
                 default:
                     echo '';
                     break;
             }
-
+            echo '"><button class="btn primary">Volver</button></a>';
             echo '</div>';
         }
         ;

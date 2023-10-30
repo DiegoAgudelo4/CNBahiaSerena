@@ -6,7 +6,3 @@ Codigo  -> Razón
  12     -> 'Error Al actualizar'
  13     -> 'Insertado correctamente'
  14     -> 'Error al insertar'
-
- 20     -> 'llama a formulario de usuarios'
- 21     -> 'llama a formulario de barcos'
- 22     -> 'llama a formulario de salidas'

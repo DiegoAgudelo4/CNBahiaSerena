@@ -19,7 +19,8 @@
             <h3>Barcos de Bahía serena</h3>
         </div>
         <div class="panelagregar">
-            <a href="#"><img src="../img/LogoBahiaSerenaIcon.png" alt=""  class="agregar"></a>
+            <?php include '../components/buscar.php';?>
+            <a href="index.php?tipo=Barco&Insertar=true"><img src="../img/add.png" alt=""  class="agregar"></a>
         </div>
         <div class="ListaDeUsuarios">
             <!-- Tarjetas que contienen cada usuario -->
@@ -44,6 +45,9 @@
                     echo '</div>';
                     echo '</div>';
                 }
+            }
+            if (isset($_GET['Insertar'])) {
+                include '../components/modalInsertar.php';
             }
             ?>
         </div>

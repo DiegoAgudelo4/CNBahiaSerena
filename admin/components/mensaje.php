@@ -37,19 +37,21 @@ $codigo = $_GET['Codigo'];
         </div>
         <?php
             echo '<div class="containTableForm">';
+            echo '<a href="';
             switch ($_GET['tipo']) {
                 case 'Usuario':
-                    echo '<a href="../usuarios"><button class="btn primary">Volver</button></a>';
+                    echo '../usuarios';
                     break;
                 case 'Salida':
-                    echo '<a href="../salidas"><button class="btn primary">Volver</button></a>';
+                    echo '../salidas';
                     break;
                 case 'Barco':
-                    echo '<a href="../Barcos"><button class="btn primary">Volver</button></a>';
+                    echo '../Barcos';
                 default:
                     echo '';
                     break;
             };
+            echo '"><button class="btn primary">Volver</button></a>';
             echo '</div>';
         ?>
     </div>

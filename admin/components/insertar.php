@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fechayhora = $_POST['fechayhora'];
         $Barco = $_POST['Barco'];
         $conexion = conectarBD();
-        $sql = "UPDATE salida SET Destino=?, FechaYHora=? WHERE idSalida=?";
+        //$sql = "UPDATE salida SET Destino=?, FechaYHora=? WHERE idSalida=?";
         if ($stmt = $conexion->prepare($sql)) {
             $stmt->bind_param("ssi",$Destino, $fechayhora, $id);
             if ($stmt->execute()) {
