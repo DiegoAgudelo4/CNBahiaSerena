@@ -38,7 +38,7 @@ switch ($tipo) {
     case "Salida":
         $query = 'DELETE FROM `salida` WHERE idSalida = ?';
         $stmt = mysqli_prepare($conexion, $query);
-        mysqli_stmt_bind_param($stmt, 'i', $id); // 'i' indica que $id es un entero
+        mysqli_stmt_bind_param($stmt, 's', $id); // 'i' indica que $id es un entero
         try {
             if (mysqli_stmt_execute($stmt)) {
                 // Éxito: La eliminación se realizó con éxito.

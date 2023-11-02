@@ -6,6 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/LogoBahiaSerenaIcon.png" type="image/x-icon">
+
     <title>Formulario</title>
 
     <link rel="shortcut icon" href="<?php echo $img; ?>LogoBahiaSerenaIcon.png" type="image/x-icon">
@@ -22,7 +24,7 @@
                 <?php echo $_GET["tipo"]; ?> de Bahía Serena
             </h3>
         </div>
-        <div class="containTableForm">
+        <div class="containTableForm ">
             <?php
             if (isset($_GET['Codigo'])) {
                 include 'mensaje.php';
@@ -64,7 +66,7 @@
                     echo '';
                     break;
             }
-            echo '"><button class="btn primary">Volver</button></a>';
+            echo '"><button class="btn primary">Volver a '.$tipo.'s</button></a>';
             echo '</div>';
         }
         ;

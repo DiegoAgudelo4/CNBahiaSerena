@@ -21,8 +21,8 @@ if ($set) {
         <tr class="contenedor-input">
             <td>
                 <label>
-                    <?php 
-                    $set ? 'id Salida': '';
+                    <?php
+                    $set ? print 'id Salida' : '';
                     ?>
                 </label>
             </td>
@@ -80,7 +80,8 @@ if ($set) {
                 if ($set) {
                     print '<input type="text" name="Barco" id="Barco" value="' . $resultado['Barco'] . '" readonly>';
                 } else {
-                    echo '<select name="Barco">';
+                    echo '<select name="Barco" id="Barco" required>';
+                    echo '<option value="">  </option>';
                     $sql = "SELECT * FROM `barco`";
                     $conexion = conectarBD();
                     $resultado = (mysqli_query($conexion, $sql));
@@ -93,12 +94,39 @@ if ($set) {
 
             </td>
         </tr>
+        <tr class="contenedor-input">
+            <td>
+                <label>
+                    Patron
+                </label>
+            </td>
+            <td>
+                <?php
+                if ($set) {
+                    print ' <a href="../components/form.php?tipo=Usuario&id=' . $resultado['Patron'] . '">
+                                <input type="text" name="Patron" id="Patron" value="' . $resultado['Patron'] . '" readonly>
+                            </a>';
+                } else {
+                    echo '<select name="Patron" id="Patron" required>';
+                    echo '<option value="">  </option>';
+                    $sql = "SELECT * FROM `usuario` WHERE TipoUsuario='TPU-2' ";
+                    $conexion = conectarBD();
+                    $resultado = (mysqli_query($conexion, $sql));
+                    while ($fila = mysqli_fetch_array($resultado)) {
+                        echo '<option value="' . $fila['Cedula'] . '">' . $fila['Nombre'] . ' ' . $fila['Apellidos'] . '</option>';
+                    }
+                    echo '</select>';
+                }
+                ?>
+
+            </td>
+        </tr>
 
     </table>
     <div class="formbuttons">
         <?php
         if ($set) {
-            echo ' <a href="eliminar.php?tipo=Salida&id=<?php echo $id; ?>" class="btn danger">Eliminar</a>
+            echo ' <a href="eliminar.php?tipo=Salida&id=' . $id . '" class="btn danger">Eliminar</a>
                     <button class="btn success" type="submit">Actualizar</button>';
         } else {
             echo '<button class="btn success" type="submit">Insertar</button>';

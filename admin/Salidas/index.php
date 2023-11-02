@@ -27,7 +27,7 @@
             <!-- Tarjetas que contienen cada usuario -->
             <?php
             $conexion=conectarBD();
-            $queryUsuarios = "SELECT * FROM `salida` WHERE 1;";
+            $queryUsuarios = "SELECT * FROM `salida` WHERE Barco LIKE'%$buscar%' OR Destino LIKE'%$buscar%';";
             $resultado = mysqli_query($conexion, $queryUsuarios);
             if (mysqli_num_rows($resultado) > 0) {
                 while ($row = mysqli_fetch_array($resultado)) {
@@ -43,6 +43,12 @@
                     echo '</div>';
                     echo '</div>';
                 }
+            }else{
+                echo '<div class="tarjeta">';
+                echo '<div class="cuerpo">
+                        No hay salidas registradas';
+                echo '</div>';
+                echo '</div>';
             }
             if (isset($_GET['Insertar'])) {
                 include '../components/modalInsertar.php';

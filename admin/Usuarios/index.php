@@ -30,9 +30,9 @@
         </div>
         <div class="ListaDeUsuarios">
             <!-- Tarjetas que contienen cada usuario -->
-            <?php
+            <?php 
             $conexion = conectarBD();
-            $queryUsuarios = "SELECT U.Cedula,u.Nombre,U.Apellidos, TU.NombreTipo FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE u.Nombre like '%$buscar%' or U.Cedula like '%$buscar%' or U.Apellidos like '%$buscar%' ORDER BY U.NOMBRE ASC, U.APELLIDOS ASC;";
+            $queryUsuarios = "SELECT U.Cedula,u.Nombre,U.Apellidos, TU.NombreTipo FROM `usuario` AS U INNER JOIN `tipousuario` AS TU ON u.TipoUsuario=TU.CodTipoUsuario WHERE u.Nombre like '%$buscar%' or U.Cedula like '%$buscar%' or U.Apellidos like '%$buscar%' OR TU.NombreTipo LIKE '%$buscar%' ORDER BY U.NOMBRE ASC, U.APELLIDOS ASC;";
             $resultado = mysqli_query($conexion, $queryUsuarios);
             if (mysqli_num_rows($resultado) > 0) {
                 while ($row = mysqli_fetch_array($resultado)) {
@@ -52,7 +52,7 @@
             } else {
                 echo '<div class="tarjeta">';
                 echo '<div class="cuerpo">';
-                echo 'No hay resultados';
+                echo 'No hay usuarios registrados';
                 echo '</div>';
                 echo '</div>';
             }

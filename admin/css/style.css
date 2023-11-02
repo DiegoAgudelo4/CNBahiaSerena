@@ -42,6 +42,8 @@ body {
 .loginForm{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .contenedor-input{
     
@@ -106,6 +108,7 @@ nav ul li a {
     font-size: 17px;
     border-radius: 10px;
     box-shadow: 0px 6px 1px 1px #bebebe;
+    cursor: pointer;
 
 }
 
@@ -131,9 +134,10 @@ ul li a:hover {
 
 .ListaDeUsuarios {
     margin: 0px 5px 10px;
+    /*
     border-style: solid;
     border-color: black;
-    border-width: 1px;
+    border-width: 1px;*/
     display: flex;
     flex-wrap: wrap;
 }
@@ -163,15 +167,15 @@ ul li a:hover {
     padding: 10px;
 }
 .cuerpo img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+
 }
 
 .pie {
     position: relative;
     background-color: #001F3F;
     border-radius: 0 0 15px 15px;
-    padding: 10px;
+    padding: 10px 0px;
     text-align: center;
     width: 100%;
 }
@@ -179,6 +183,7 @@ ul li a:hover {
 .pie a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
     
 }
 .formEdit{
@@ -195,17 +200,50 @@ ul li a:hover {
     align-items: center;
     width: 100%;
 }
-.agregar{
+.agregar {
     width: 30px;
+    vertical-align: middle; /* Añade esta línea para alinear verticalmente */
 }
-.panelagregar{
+
+.panelagregar {
     display: flex;
     justify-content: flex-end;
-    align-items: baseline;
+    align-items: center; /* Cambia a center para centrar verticalmente */
     margin-right: 30px;
+
 }
-.panelagregar a img{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+.panelagregar a{
+    cursor: pointer;
+}
+
+input{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+label {
+    margin: 5px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f5f5f5;
+    width: 225px; /* Personaliza el ancho según tus necesidades */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    margin-left: 5px;
+
+}
+.contenedor-input a input{
+    cursor: pointer;
 }
