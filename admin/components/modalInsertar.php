@@ -28,7 +28,7 @@
             ?>
         </div>
         <?php
-        echo '<div class="containTableForm">';
+        echo '<div class="containerBtn">';
         echo '<a href="';
         switch ($_GET['tipo']) {
             case 'Usuario':

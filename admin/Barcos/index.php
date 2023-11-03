@@ -52,7 +52,7 @@
                     echo '<div class="cuerpo">' . $row['Nombre'] . '</div>';
                     echo '<div class="cuerpo">' . $row['Apellidos'] . '</div>';
                     echo '<div class="pie">';
-                    echo '<a href="../components/form.php?tipo=Barco&id=' . $row['NumMatricula'] . '">ver</a>';
+                    echo '<a href="../form.php?tipo=Barco&id=' . $row['NumMatricula'] . '">ver</a>';
                     echo '</div>';
                     echo '</div>';
                 }

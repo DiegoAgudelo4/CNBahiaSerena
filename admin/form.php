@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<?php require_once '../config.php'; ?>
+<?php require_once 'config.php'; ?>
 
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,13 @@
     <title>Formulario</title>
 
     <link rel="shortcut icon" href="<?php echo $img; ?>LogoBahiaSerenaIcon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href=<?php echo $hojaEstilosUs; ?>>
+    <link rel="stylesheet" type="text/css" href=<?php echo $hojaEstilos; ?>>
+    <link rel="stylesheet" type="text/css" href=<?php echo $hojaEstilosForm; ?>>
 </head>
 
 <body>
     <?php
-    include '../components/header.php';
+    include './components/header.php';
     ?>
     <div class="PanelPrincipal">
         <div class="titulo">
@@ -27,19 +28,19 @@
         <div class="containTableForm ">
             <?php
             if (isset($_GET['Codigo'])) {
-                include 'mensaje.php';
+                include './components/mensaje.php';
             } else {
                 $tipo = $_GET["tipo"];
                 $id = $_GET["id"];
                 switch ($tipo) {
                     case "Usuario":
-                        include 'formUsuario.php';
+                        include './components/formUsuario.php';
                         break;
                     case 'Salida':
-                        include 'formSalida.php';
+                        include './components/formSalida.php';
                         break;
                     case 'Barco':
-                        include 'formBarco.php';
+                        include './components/formBarco.php';
                         break;
                     default:
                         echo 'Error desconocido';
@@ -54,13 +55,13 @@
             echo '<a href="';
             switch ($tipo) {
                 case 'Usuario':
-                    echo '../usuarios';
+                    echo './usuarios';
                     break;
                 case 'Salida':
-                    echo '../salidas';
+                    echo './salidas';
                     break;
                 case 'Barco':
-                    echo '../Barcos';
+                    echo './Barcos';
                     break;
                 default:
                     echo '';
@@ -72,7 +73,5 @@
         ;
         ?>
     </div>
-
 </body>
-
 </html>

@@ -7,11 +7,11 @@ body {
 /*Estilos Login*/
 .login{
     display: flex;
-    background-color: #EDEDED;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px 200px;
+    background-color: #EDEDED;
     margin-top: 2%;
     padding: 50px;
 }

@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="../css/styleForms.css">
-<?php require_once '../config.php'; ?>
+<link rel="stylesheet" type="text/css" href="./css/styleForms.css">
+<?php //require_once '../config.php'; ?>
 <?php
 $set = isset($_GET["id"]);
 if ($set) {
@@ -126,7 +126,7 @@ if ($set) {
 <div class="containTableForm">
     <?php
     $set ?
-        print ' <form action="actualizar.php" method="post">'
+        print ' <form action="./components/actualizar.php" method="post">'
         :
         print ' <form action="../components/insertar.php" method="post" >';
     ?>
@@ -264,7 +264,7 @@ if ($set) {
         <?php
         if ($set) {
             echo '
-                <a href="eliminar.php?tipo=Usuario&id=' . $id . '" class="btn danger">Eliminar</a>
+                <a href="./components/eliminar.php?tipo=Usuario&id=' . $id . '" class="btn danger">Eliminar</a>
                 <button class="btn success" type="submit">Actualizar</button>
               ';
         } else {

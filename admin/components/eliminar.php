@@ -16,7 +16,7 @@ switch ($tipo) {
                     'Codigo' => '10',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1451) {
@@ -27,7 +27,7 @@ switch ($tipo) {
                     'Codigo' => '1',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 // Otro tipo de error
                 echo "Error: " . $e->getMessage();
@@ -47,7 +47,7 @@ switch ($tipo) {
                     'Codigo' => '10',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1451) {
@@ -58,7 +58,7 @@ switch ($tipo) {
                     'Codigo' => '1',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 // Otro tipo de error
                 echo "Error: " . $e->getMessage();
@@ -83,7 +83,7 @@ switch ($tipo) {
                     'Codigo' => '10',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
         } catch (mysqli_sql_exception $e) {
             if ($e->getCode() == 1451) {
@@ -94,7 +94,7 @@ switch ($tipo) {
                     'Codigo' => '1',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 // Otro tipo de error
                 echo "Error: " . $e->getMessage();

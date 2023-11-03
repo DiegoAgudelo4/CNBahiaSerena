@@ -10,8 +10,8 @@ function conectarBD() {
 $nombreGlobalAdmin='CNBahiaSerena/admin/';
 //Hojas de estilos
 $hojaEstilos='./css/style.css';
-$hojaEstilosForm='./css/styleForm.css';
-$hojaEstilosFormUs='../css/styleForm.css';
+$hojaEstilosForm='./css/styleForms.css';
+$hojaEstilosFormUs='../css/styleForms.css';
 $hojaEstilosUs='../css/style.css';
 //componentes
 $header='../components/header.php';

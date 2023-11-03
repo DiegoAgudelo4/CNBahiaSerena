@@ -14,11 +14,6 @@
 <body>
     <?php
     include '../components/header.php';
-    /*if(!isset($_GET['Usuario'])) {
-        header('location: ../');
-    }else{
-        echo $_GET['Usuario'];
-    }*/
     ?>
     <div class="PanelPrincipal">
         <div class="titulo">
@@ -45,7 +40,7 @@
                     echo '<div class="cuerpo">' . $row['NombreTipo'] . '</div>';
                     echo '<div class="cuerpo">Id: ' . $row['Cedula'] . '</div>';
                     echo '<div class="pie">';
-                    echo '<a href="../components/form.php?tipo=Usuario&id=' . $row['Cedula'] . '">ver</a>';
+                    echo '<a href="../form.php?tipo=Usuario&id=' . $row['Cedula'] . '">ver</a>';
                     echo '</div>';
                     echo '</div>';
                 }

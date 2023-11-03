@@ -1,5 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/styleForms.css">
-<?php require_once '../config.php'; ?>
+<link rel="stylesheet" type="text/css" href="./css/styleForms.css">
 <?php
 $set = isset($_GET["id"]);
 if ($set) {
@@ -38,9 +37,9 @@ if ($set) {
     echo "    <img src=";
 
     if ($row['Foto'] == 'NULL') {
-        echo '../img/yatch.png';
+        echo './img/yatch.png';
     } else {
-        echo '..' . $row['Foto'];
+        echo '.' . $row['Foto'];
     }
 
     echo " alt='FotoDeBarco'>";
@@ -112,7 +111,7 @@ if ($set) {
 <div class="containTableForm">
     <?php
     $set ?
-        print ' <form action="actualizar.php" method="post">
+        print ' <form action="./components/actualizar.php" method="post">
             <h2>Actualizar</h2>'
         :
         print ' <form action="../components/insertar.php" method="post" enctype="multipart/form-data">';
@@ -226,7 +225,7 @@ if ($set) {
     <div class="formbuttons">
         <?php
         if ($set) {
-            echo ' <a href="eliminar.php?tipo=Barco&id=' . $id . '" class="btn danger">Eliminar</a> 
+            echo ' <a href="./components/eliminar.php?tipo=Barco&id=' . $id . '" class="btn danger">Eliminar</a> 
                 <button class="btn success" type="submit">Actualizar</button>
             ';
         } else {

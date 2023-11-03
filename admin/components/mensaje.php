@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href='../css/styleModal.css'>
+    <link rel="stylesheet" type="text/css" href='./css/styleModal.css'>
 </head>
 <?php
 $codigo = $_GET['Codigo'];
@@ -36,17 +36,17 @@ $codigo = $_GET['Codigo'];
             ?>
         </div>
         <?php
-            echo '<div class="containTableForm">';
+            echo '<div class="containbtnVolver">';
             echo '<a href="';
             switch ($_GET['tipo']) {
                 case 'Usuario':
-                    echo '../usuarios';
+                    echo './usuarios';
                     break;
                 case 'Salida':
-                    echo '../salidas';
+                    echo './salidas';
                     break;
                 case 'Barco':
-                    echo '../Barcos';
+                    echo './Barcos';
                 default:
                     echo '';
                     break;

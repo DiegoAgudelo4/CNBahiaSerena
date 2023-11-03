@@ -109,8 +109,6 @@
                 <?php
                 if (isset($_GET['codigo'])) {
                     echo 'Te has registrado correctamente :)';
-                }else{
-                    echo 'Hubo un error :c';
                 }
                 ?>
                 <button class="btn success" type="submit">inscribirse</button>

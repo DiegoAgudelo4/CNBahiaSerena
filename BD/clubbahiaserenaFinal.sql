@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-11-2023 a las 06:38:04
+-- Tiempo de generación: 04-11-2023 a las 00:55:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -60,11 +60,7 @@ CREATE TABLE `barco` (
 
 INSERT INTO `barco` (`NumMatricula`, `NombreBarco`, `NumeroAmarre`, `Cuota`, `Foto`, `Usuario`) VALUES
 ('AB123', 'El Mamalon', 'a45', 123123, '/img/ImgUsers/Barcos/AB123.jpg', '1001395802'),
-('FQ2345', 'Victus', 'B23', 23123, '/img/ImgUsers/Barcos/FQ2345.jpg', '1001395801'),
-('GT98765', 'Viento Marino', 'B8', 600, 'NULL', '1001395802'),
-('MM95831', 'Rompe Olas', 'B15', 23445, 'NULL', '1001395801'),
-('T4', 'asdas', '2bs', 1231, '/img/ImgUsers/Barcos/T4.jpg', '1001395801'),
-('TO987', 'ElBicho', 'CR7', 999999, '/img/ImgUsers/Barcos/TO987.jpg', '1001395801');
+('FQ2345', 'Victus', 'B23', 23123, '/img/ImgUsers/Barcos/FQ2345.jpg', '1001395801');
 
 -- --------------------------------------------------------
 
@@ -86,8 +82,7 @@ CREATE TABLE `salida` (
 
 INSERT INTO `salida` (`idSalida`, `Destino`, `FechayHora`, `Barco`, `Patron`) VALUES
 (10, 'Villa alegre', '2023-10-29 18:47:00', 'AB123', '1001395801'),
-(11, 'Isla Maluca', '2023-11-01 16:54:00', 'FQ2345', '1001395801'),
-(12, 'Villa alegre', '2023-11-01 22:32:00', 'AB123', '1001395802');
+(13, 'Isla Maluca', '2023-11-03 17:15:00', 'AB123', '1001395801');
 
 -- --------------------------------------------------------
 
@@ -132,8 +127,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`Cedula`, `Nombre`, `Apellidos`, `TipoUsuario`, `Telefono`, `FechaNacimiento`, `Direccion`, `Email`) VALUES
 ('1001395801', 'Diego', 'Agudelo', 'TPU-2', '3134171749', '2002-03-04', 'Enrique', 'diegoagudelo180@gmail.com'),
-('1001395802', 'Rigoberto', 'Uran', 'TPU-2', '3134171749', '2002-03-04', 'Enrique segoviano', 'diegoagudelo180@gmail.com'),
-('1001395808', 'Diego Alejandro', 'Agudelo Rendon', 'TPU-1', '3134171749', '2023-10-29', 'calle 47a # 87-34', 'diegoagudelo180@gmail.com');
+('1001395802', 'Rigoberto', 'Uran', 'TPU-2', '3134171749', '2002-03-04', 'Enrique segoviano', 'diegoagudelo180@gmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -175,7 +169,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `salida`
 --
 ALTER TABLE `salida`
-  MODIFY `idSalida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idSalida` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas

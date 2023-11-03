@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Usuario',
                     'Codigo' => '12',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -51,13 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Salida',
                     'Codigo' => '12',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -80,13 +80,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Salida',
                     'Codigo' => '12',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -109,13 +109,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '11',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Barco',
                     'Codigo' => '12',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();

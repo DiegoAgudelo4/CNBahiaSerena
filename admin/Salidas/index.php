@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
+<?php require_once '../config.php'; ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salidas</title>
     <link rel="shortcut icon" href="../img/LogoBahiaSerenaIcon.png" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href=<?php echo $hojaEstilosUs; ?>>
 </head>
 
 <body>
     <?php
     include '../components/header.php';
-    require_once '../config.php';
     ?>
     </nav>
     <div class="PanelPrincipal">
@@ -39,7 +38,7 @@
                     echo '<div class="titulo">Destino: ' . $row['Destino'] . '</div>';
                     echo '<div class="cuerpo">Fecha: ' . $row['FechayHora'] . '</div>';
                     echo '<div class="pie">';
-                    echo '<a href="../components/form.php?tipo=Salida&id=' . $row['idSalida'] . '">ver</a>';
+                    echo '<a href="../form.php?tipo=Salida&id=' . $row['idSalida'] . '">ver</a>';
                     echo '</div>';
                     echo '</div>';
                 }

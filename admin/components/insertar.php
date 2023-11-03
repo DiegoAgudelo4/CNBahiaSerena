@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         'Codigo' => '13',
                     );
                     $datos_codificados = http_build_query($datos_post);
-                    header('location: form.php?' . $datos_codificados);
+                    header('location: ./../form.php?' . $datos_codificados);
                 }
 
             } else {
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'tipo' => 'Usuario',
                     'Codigo' => '14',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ./../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -59,13 +59,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '13',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ./../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Salida',
                     'Codigo' => '14',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ./../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
@@ -103,13 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     'Codigo' => '13',
                 );
                 $datos_codificados = http_build_query($datos_post);
-                header('location: form.php?' . $datos_codificados);
+                header('location: ./../form.php?' . $datos_codificados);
             } else {
                 $datos_post = array(
                     'tipo' => 'Barco',
                     'Codigo' => '14',
                 );
-                header('location: form.php?' . $datos_codificados);
+                header('location: ./../form.php?' . $datos_codificados);
             }
             ;
             $stmt->close();
