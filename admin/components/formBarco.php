@@ -85,10 +85,10 @@ if ($set) {
                 foreach ($resultadosArray as $row2) {
                     echo "<tr>";
                     echo "<td>$i</td>";
-                    echo '<td><a href="../components/form.php?tipo=Salida&id=' . $row2['idSalida'] . '">' . $row2['idSalida'] . '</a></td>';
+                    echo '<td><a href="./form.php?tipo=Salida&id=' . $row2['idSalida'] . '">' . $row2['idSalida'] . '</a></td>';
                     echo "<td>" . $row2["Destino"] . "</td>";
                     echo "<td>" . $row2["FechayHora"] . "</td>";
-                    echo '<td><a href="../components/form.php?tipo=Usuario&id=' . $row2['Patron'] . '">' . $row2["Patron"] . '</a></td>';
+                    echo '<td><a href="./form.php?tipo=Usuario&id=' . $row2['Patron'] . '">' . $row2["Patron"] . '</a></td>';
                     echo "</tr>";
                     $i=$i+1;
                 }

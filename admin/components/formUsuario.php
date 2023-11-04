@@ -91,7 +91,7 @@ if ($set) {
             echo "<div class='tablaSalidas'>
                 <h2>Salidas de $id</h2>";
             if (count($resultadosArray) == 0) { 
-                echo "Este Usuario no es dueño de ningun barco";
+                echo "Este Usuario no tiene ninguna salida";
             } else {
 
                 echo "<table class='tablaAgregada'>";
